@@ -100,7 +100,13 @@ function NewCard(player){
         p2cards+=cardDeck[firstCard][0]+" ";
         player2sum +=cardDeck[firstCard][1];
         cardDeck.splice(firstCard, 1)
-        if(player2sum>player1sum){
+        if(player2sum>21){
+            message="Bust. Player 1 Wins."
+            isAlive = false
+            document.getElementById("player2_new_card").disabled=true;
+            document.getElementById("player2_stand").disabled=true;
+        }
+        else if(player2sum>player1sum){
             message="Player 2 Wins."
             document.getElementById("player2_new_card").disabled=true;
             document.getElementById("player2_stand").disabled=true;
@@ -113,13 +119,6 @@ function NewCard(player){
         else if(player2sum===21){
             message="Blackjack. Player 2 Wins."
             hasBlackJack=true;
-            document.getElementById("player2_new_card").disabled=true;
-            document.getElementById("player2_stand").disabled=true;
-        }
-
-        else {
-            message="Bust. Player 1 Wins."
-            isAlive = false
             document.getElementById("player2_new_card").disabled=true;
             document.getElementById("player2_stand").disabled=true;
         }
