@@ -5,10 +5,16 @@
     <body>
         <h1>Blackjack</h1>
         <p id="message-el">Play again?</p>
-        <p id="card-el">Cards:</p>
-        <p id="sum-el">Sum:</p>
+        <p id="turn-el"></p>
+        <p id="player1cards-el">Player 1 Cards:</p>
+        <p id="player1sum-el">Player 1 Sum:</p>
+        <p id="player2cards-el">Player 2 Cards:</p>
+        <p id="player2sum-el">Player 2 Sum:</p>
         <button id="start" onclick="StartGame()">Start Game</button>
-        <button id="new_card" onclick="NewCard()" disabled="true">New Card</button>
+        <button id="player1_new_card" onclick="NewCard('1')" disabled="true">Player 1 Hit</button>
+        <button id="player1_stand" onclick="Stand('1')" disabled="true">Player 1 Stand</button>
+        <button id="player2_new_card" onclick="NewCard('2')" disabled="true">Player 2 Hit</button>
+        <button id="player2_stand" onclick="Stand('2')" disabled="true">Player 2 Stand</button>
         <script src="index.js"></script>
     </body>
 </html>
